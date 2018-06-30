@@ -1,0 +1,15 @@
+ <Region>
+      <Name>dynamodb</Name>
+      <Endpoint>
+        <ServiceName>dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>false</Https>
+        <Hostname>192.168.99.100</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>false</Https>
+        <Hostname>192.168.99.100</Hostname>
+      </Endpoint>
+    </Region>

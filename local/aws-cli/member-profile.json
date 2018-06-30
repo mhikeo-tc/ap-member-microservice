@@ -1,0 +1,1460 @@
+{
+    "MemberProfile": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "magrathean"
+                    }, 
+                    "photoURL": {
+                        "S": "http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg"
+                    }, 
+                    "handle": {
+                        "S": "magrathean"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    },
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "40011578"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+		{
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    },
+                    "handleLower": {
+                        "S": "nostatus"
+                    },
+                    "photoURL": {
+                        "S": "http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg"
+                    },
+                    "description": {
+                        "S": "this is description for member profile missing fields"
+                    },
+                    "handle": {
+                        "S": "NoStatus"
+                    },
+                    "addresses": {
+                        "S": "[]"
+                    },
+                    "firstName": {
+                        "S": "F_NAME"
+                    },
+                    "lastName": {
+                        "S": "L_NAME"
+                    },
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    },
+                    "userId": {
+                        "N": "40011579"
+                    },
+                    "otherLangName": {
+                        "S": "NIAL"
+                    },
+                    "createdBy": {
+                        "S": "40011578"
+                    },
+                    "updatedBy": {
+                        "S": "40011578"
+                    },
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    },
+                    "email": {
+                        "S": "nostatus@email.com"
+                    },
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "marry"
+                    }, 
+                    "photoURL": {
+                        "S": "http://img.picturequotes.com/2/9/8712/dont-panic-quote-2.jpg"
+                    }, 
+                    "handle": {
+                        "S": "Marry"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME1"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME1"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "40000001"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email1@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "messenger"
+                    }, 
+                    "photoURL": {
+                        "S": "http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg"
+                    }, 
+                    "handle": {
+                        "S": "messenger"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME2"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME2"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "40000002"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email2@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+		
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mendall"
+                    }, 
+                    "photoURL": {
+                        "S": "http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg"
+                    }, 
+                    "handle": {
+                        "S": "Mendall"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME3"
+                    },
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "40000003"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email3@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mlove"
+                    },
+                    "handle": {
+                        "S": "mLove"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "40000004"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest1"
+                    },
+                    "handle": {
+                        "S": "mtest1"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000001"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest2"
+                    },
+                    "handle": {
+                        "S": "mtest2"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000002"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest3"
+                    },
+                    "handle": {
+                        "S": "mtest3"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000003"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest4"
+                    },
+                    "handle": {
+                        "S": "mtest4"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000004"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest5"
+                    },
+                    "handle": {
+                        "S": "mtest5"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000005"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest6"
+                    },
+                    "handle": {
+                        "S": "mtest6"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000006"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest7"
+                    },
+                    "handle": {
+                        "S": "mtest7"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000007"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest8"
+                    },
+                    "handle": {
+                        "S": "mtest8"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000008"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest9"
+                    },
+                    "handle": {
+                        "S": "mtest9"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000009"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest10"
+                    },
+                    "handle": {
+                        "S": "mtest10"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000010"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest11"
+                    },
+                    "handle": {
+                        "S": "mtest11"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000011"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest12"
+                    },
+                    "handle": {
+                        "S": "mtest12"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000012"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest13"
+                    },
+                    "handle": {
+                        "S": "mtest13"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000013"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest14"
+                    },
+                    "handle": {
+                        "S": "mtest14"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000014"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest15"
+                    },
+                    "handle": {
+                        "S": "mtest15"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000015"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest16"
+                    },
+                    "handle": {
+                        "S": "mtest16"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000016"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest17"
+                    },
+                    "handle": {
+                        "S": "mtest17"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000017"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest18"
+                    },
+                    "handle": {
+                        "S": "mtest18"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000018"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "mtest19"
+                    },
+                    "handle": {
+                        "S": "mtest19"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    }, 
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "50000019"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "email4@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        }
+    ]
+}

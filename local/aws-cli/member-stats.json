@@ -1,0 +1,166 @@
+{
+    "MemberStats": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "handleLower": {
+                        "S": "magrathean"
+                    }, 
+                    "DEVELOP": {
+                        "S": "{\"challenges\":2,\"wins\":0,\"subTracks\":[{\"id\":150,\"name\":\"CODE\",\"challenges\":2,\"mostRecentEventDate\":1450656000000,\"submissions\":{\"numInquiries\":2,\"submissions\":2,\"submissionRate\":1.0,\"passedScreening\":0,\"screeningSuccessRate\":0.0,\"passedReview\":0,\"reviewSuccessRate\":0.0,\"appeals\":0,\"appealSuccessRate\":0.0,\"maxScore\":0.0,\"minScore\":0.0,\"avgScore\":0.0,\"avgPlacement\":0.0,\"winPercent\":0.0},\"rank\":{},\"mostRecentSubmission\":1446483600000,\"wins\":0}],\"mostRecentSubmission\":1446483600000,\"mostRecentEventDate\":1450656000000}"
+                    }, 
+                    "wins": {
+                        "N": "0"
+                    }, 
+                    "userId": {
+                        "N": "40011578"
+                    }, 
+                    "challenges": {
+                        "N": "6"
+                    }, 
+                    "DATA_SCIENCE": {
+                        "S": "{\"challenges\":4,\"wins\":0,\"SRM\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":1114,\"percentile\":54.59,\"rank\":3862,\"countryRank\":251,\"schoolRank\":0,\"volatility\":324,\"maximumRating\":1211,\"minimumRating\":1114,\"defaultLanguage\":\"Java\",\"competitions\":2},\"mostRecentEventName\":\"SRM 631\",\"mostRecentEventDate\":1409356800000,\"challengeDetails\":[{\"levelName\":\"Level Three\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level One\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level Two\",\"challenges\":0,\"failedChallenges\":0}],\"division1\":[{\"levelName\":\"Level One\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"division2\":[{\"levelName\":\"Level Two\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level Three\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level One\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"mostRecentSubmission\":1400600033308},\"MARATHON_MATCH\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":895,\"competitions\":2,\"avgRank\":27,\"avgNumSubmissions\":0,\"bestRank\":25,\"topFiveFinishes\":0,\"topTenFinishes\":0,\"rank\":407,\"percentile\":7.9186,\"volatility\":327.0,\"minimumRating\":895,\"maximumRating\":999,\"countryRank\":57,\"schoolRank\":0,\"defaultLanguage\":\"Java\"},\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentEventDate\":1411689600000,\"mostRecentSubmission\":1412124389662},\"mostRecentEventDate\":1411689600000,\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentSubmission\":1412124389662}"
+                    }, 
+                    "DESIGN": {
+                        "S": "{\"challenges\":0,\"wins\":0,\"subTracks\":[]}"
+                    }, 
+                    "handle": {
+                        "S": "magrathean"
+                    }, 
+                    "maxRating": {
+                        "S": "{\"rating\":1114,\"track\":\"DATA_SCIENCE\",\"subTrack\":\"SRM\"}"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "handleLower": {
+                        "S": "marry"
+                    }, 
+                    "DEVELOP": {
+                        "S": "{\"challenges\":2,\"wins\":0,\"subTracks\":[{\"id\":150,\"name\":\"CODE\",\"challenges\":2,\"mostRecentEventDate\":1450656000000,\"submissions\":{\"numInquiries\":2,\"submissions\":2,\"submissionRate\":1.0,\"passedScreening\":0,\"screeningSuccessRate\":0.0,\"passedReview\":0,\"reviewSuccessRate\":0.0,\"appeals\":0,\"appealSuccessRate\":0.0,\"maxScore\":0.0,\"minScore\":0.0,\"avgScore\":0.0,\"avgPlacement\":0.0,\"winPercent\":0.0},\"rank\":{},\"mostRecentSubmission\":1446483600000,\"wins\":0}],\"mostRecentSubmission\":1446483600000,\"mostRecentEventDate\":1450656000000}"
+                    }, 
+                    "wins": {
+                        "N": "0"
+                    }, 
+                    "userId": {
+                        "N": "40000001"
+                    }, 
+                    "challenges": {
+                        "N": "6"
+                    }, 
+                    "DATA_SCIENCE": {
+                        "S": "{\"challenges\":4,\"wins\":0,\"SRM\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":1114,\"percentile\":54.59,\"rank\":3862,\"countryRank\":251,\"schoolRank\":0,\"volatility\":324,\"maximumRating\":1211,\"minimumRating\":1114,\"defaultLanguage\":\"Java\",\"competitions\":2},\"mostRecentEventName\":\"SRM 631\",\"mostRecentEventDate\":1409356800000,\"challengeDetails\":[{\"levelName\":\"Level Three\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level One\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level Two\",\"challenges\":0,\"failedChallenges\":0}],\"division1\":[{\"levelName\":\"Level One\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"division2\":[{\"levelName\":\"Level Two\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level Three\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level One\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"mostRecentSubmission\":1400600033308},\"MARATHON_MATCH\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":895,\"competitions\":2,\"avgRank\":27,\"avgNumSubmissions\":0,\"bestRank\":25,\"topFiveFinishes\":0,\"topTenFinishes\":0,\"rank\":407,\"percentile\":7.9186,\"volatility\":327.0,\"minimumRating\":895,\"maximumRating\":999,\"countryRank\":57,\"schoolRank\":0,\"defaultLanguage\":\"Java\"},\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentEventDate\":1411689600000,\"mostRecentSubmission\":1412124389662},\"mostRecentEventDate\":1411689600000,\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentSubmission\":1412124389662}"
+                    }, 
+                    "DESIGN": {
+                        "S": "{\"challenges\":0,\"wins\":0,\"subTracks\":[]}"
+                    }, 
+                    "handle": {
+                        "S": "Marry"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "handleLower": {
+                        "S": "messenger"
+                    }, 
+                    "DEVELOP": {
+                        "S": "{\"challenges\":2,\"wins\":0,\"subTracks\":[{\"id\":150,\"name\":\"CODE\",\"challenges\":2,\"mostRecentEventDate\":1450656000000,\"submissions\":{\"numInquiries\":2,\"submissions\":2,\"submissionRate\":1.0,\"passedScreening\":0,\"screeningSuccessRate\":0.0,\"passedReview\":0,\"reviewSuccessRate\":0.0,\"appeals\":0,\"appealSuccessRate\":0.0,\"maxScore\":0.0,\"minScore\":0.0,\"avgScore\":0.0,\"avgPlacement\":0.0,\"winPercent\":0.0},\"rank\":{},\"mostRecentSubmission\":1446483600000,\"wins\":0}],\"mostRecentSubmission\":1446483600000,\"mostRecentEventDate\":1450656000000}"
+                    }, 
+                    "wins": {
+                        "N": "0"
+                    }, 
+                    "userId": {
+                        "N": "40000002"
+                    }, 
+                    "challenges": {
+                        "N": "6"
+                    }, 
+                    "DATA_SCIENCE": {
+                        "S": "{\"challenges\":4,\"wins\":0,\"SRM\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":1114,\"percentile\":54.59,\"rank\":3862,\"countryRank\":251,\"schoolRank\":0,\"volatility\":324,\"maximumRating\":1211,\"minimumRating\":1114,\"defaultLanguage\":\"Java\",\"competitions\":2},\"mostRecentEventName\":\"SRM 631\",\"mostRecentEventDate\":1409356800000,\"challengeDetails\":[{\"levelName\":\"Level Three\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level One\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level Two\",\"challenges\":0,\"failedChallenges\":0}],\"division1\":[{\"levelName\":\"Level One\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"division2\":[{\"levelName\":\"Level Two\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level Three\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level One\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"mostRecentSubmission\":1400600033308},\"MARATHON_MATCH\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":895,\"competitions\":2,\"avgRank\":27,\"avgNumSubmissions\":0,\"bestRank\":25,\"topFiveFinishes\":0,\"topTenFinishes\":0,\"rank\":407,\"percentile\":7.9186,\"volatility\":327.0,\"minimumRating\":895,\"maximumRating\":999,\"countryRank\":57,\"schoolRank\":0,\"defaultLanguage\":\"Java\"},\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentEventDate\":1411689600000,\"mostRecentSubmission\":1412124389662},\"mostRecentEventDate\":1411689600000,\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentSubmission\":1412124389662}"
+                    }, 
+                    "DESIGN": {
+                        "S": "{\"challenges\":0,\"wins\":0,\"subTracks\":[]}"
+                    }, 
+                    "handle": {
+                        "S": "messenger"
+                    }, 
+                    "maxRating": {
+                        "S": "{\"rating\":1314,\"track\":\"DATA_SCIENCE\",\"subTrack\":\"SRM\"}"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "handleLower": {
+                        "S": "mendall"
+                    }, 
+                    "DEVELOP": {
+                        "S": "{\"challenges\":2,\"wins\":0,\"subTracks\":[{\"id\":150,\"name\":\"CODE\",\"challenges\":2,\"mostRecentEventDate\":1450656000000,\"submissions\":{\"numInquiries\":2,\"submissions\":2,\"submissionRate\":1.0,\"passedScreening\":0,\"screeningSuccessRate\":0.0,\"passedReview\":0,\"reviewSuccessRate\":0.0,\"appeals\":0,\"appealSuccessRate\":0.0,\"maxScore\":0.0,\"minScore\":0.0,\"avgScore\":0.0,\"avgPlacement\":0.0,\"winPercent\":0.0},\"rank\":{},\"mostRecentSubmission\":1446483600000,\"wins\":0}],\"mostRecentSubmission\":1446483600000,\"mostRecentEventDate\":1450656000000}"
+                    }, 
+                    "wins": {
+                        "N": "0"
+                    }, 
+                    "userId": {
+                        "N": "40000003"
+                    }, 
+                    "challenges": {
+                        "N": "6"
+                    }, 
+                    "DATA_SCIENCE": {
+                        "S": "{\"challenges\":4,\"wins\":0,\"SRM\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":1114,\"percentile\":54.59,\"rank\":3862,\"countryRank\":251,\"schoolRank\":0,\"volatility\":324,\"maximumRating\":1211,\"minimumRating\":1114,\"defaultLanguage\":\"Java\",\"competitions\":2},\"mostRecentEventName\":\"SRM 631\",\"mostRecentEventDate\":1409356800000,\"challengeDetails\":[{\"levelName\":\"Level Three\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level One\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level Two\",\"challenges\":0,\"failedChallenges\":0}],\"division1\":[{\"levelName\":\"Level One\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"division2\":[{\"levelName\":\"Level Two\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level Three\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level One\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"mostRecentSubmission\":1400600033308},\"MARATHON_MATCH\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":895,\"competitions\":2,\"avgRank\":27,\"avgNumSubmissions\":0,\"bestRank\":25,\"topFiveFinishes\":0,\"topTenFinishes\":0,\"rank\":407,\"percentile\":7.9186,\"volatility\":327.0,\"minimumRating\":895,\"maximumRating\":999,\"countryRank\":57,\"schoolRank\":0,\"defaultLanguage\":\"Java\"},\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentEventDate\":1411689600000,\"mostRecentSubmission\":1412124389662},\"mostRecentEventDate\":1411689600000,\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentSubmission\":1412124389662}"
+                    }, 
+                    "DESIGN": {
+                        "S": "{\"challenges\":0,\"wins\":0,\"subTracks\":[]}"
+                    }, 
+                    "handle": {
+                        "S": "Mendall"
+                    }, 
+                    "maxRating": {
+                        "S": "{\"rating\":1414,\"track\":\"DATA_SCIENCE\",\"subTrack\":\"SRM\"}"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "handleLower": {
+                        "S": "mlove"
+                    }, 
+                    "DEVELOP": {
+                        "S": "{\"challenges\":2,\"wins\":0,\"subTracks\":[{\"id\":150,\"name\":\"CODE\",\"challenges\":2,\"mostRecentEventDate\":1450656000000,\"submissions\":{\"numInquiries\":2,\"submissions\":2,\"submissionRate\":1.0,\"passedScreening\":0,\"screeningSuccessRate\":0.0,\"passedReview\":0,\"reviewSuccessRate\":0.0,\"appeals\":0,\"appealSuccessRate\":0.0,\"maxScore\":0.0,\"minScore\":0.0,\"avgScore\":0.0,\"avgPlacement\":0.0,\"winPercent\":0.0},\"rank\":{},\"mostRecentSubmission\":1446483600000,\"wins\":0}],\"mostRecentSubmission\":1446483600000,\"mostRecentEventDate\":1450656000000}"
+                    }, 
+                    "wins": {
+                        "N": "0"
+                    }, 
+                    "userId": {
+                        "N": "40000004"
+                    }, 
+                    "challenges": {
+                        "N": "6"
+                    }, 
+                    "DATA_SCIENCE": {
+                        "S": "{\"challenges\":4,\"wins\":0,\"SRM\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":1114,\"percentile\":54.59,\"rank\":3862,\"countryRank\":251,\"schoolRank\":0,\"volatility\":324,\"maximumRating\":1211,\"minimumRating\":1114,\"defaultLanguage\":\"Java\",\"competitions\":2},\"mostRecentEventName\":\"SRM 631\",\"mostRecentEventDate\":1409356800000,\"challengeDetails\":[{\"levelName\":\"Level Three\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level One\",\"challenges\":0,\"failedChallenges\":0},{\"levelName\":\"Level Two\",\"challenges\":0,\"failedChallenges\":0}],\"division1\":[{\"levelName\":\"Level One\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"division2\":[{\"levelName\":\"Level Two\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level Three\",\"problemsSubmitted\":0,\"problemsFailed\":0,\"problemsSysByTest\":0},{\"levelName\":\"Level One\",\"problemsSubmitted\":1,\"problemsFailed\":0,\"problemsSysByTest\":0}],\"mostRecentSubmission\":1400600033308},\"MARATHON_MATCH\":{\"challenges\":2,\"wins\":0,\"rank\":{\"rating\":895,\"competitions\":2,\"avgRank\":27,\"avgNumSubmissions\":0,\"bestRank\":25,\"topFiveFinishes\":0,\"topTenFinishes\":0,\"rank\":407,\"percentile\":7.9186,\"volatility\":327.0,\"minimumRating\":895,\"maximumRating\":999,\"countryRank\":57,\"schoolRank\":0,\"defaultLanguage\":\"Java\"},\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentEventDate\":1411689600000,\"mostRecentSubmission\":1412124389662},\"mostRecentEventDate\":1411689600000,\"mostRecentEventName\":\"Child Stuntedness 2 Phase 1\",\"mostRecentSubmission\":1412124389662}"
+                    }, 
+                    "DESIGN": {
+                        "S": "{\"challenges\":0,\"wins\":0,\"subTracks\":[]}"
+                    }, 
+                    "handle": {
+                        "S": "mLove"
+                    }, 
+                    "maxRating": {
+                        "S": "{\"rating\":1514,\"track\":\"DATA_SCIENCE\",\"subTrack\":\"SRM\"}"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - pip install awsebcli
+
+test:
+  override:
+    - mvn clean compile package -f service/pom.xml
+
+deployment:
+  development:
+    branch: [dev, "feature/circleci"]
+    commands:
+      - .deploy/dockerhub_push.sh DEV $CIRCLE_BUILD_NUM
+      - .deploy/ebs_deploy.sh ap-member DEV $CIRCLE_BUILD_NUM
+  production:
+    branch: master
+    commands:
+      - .deploy/dockerhub_push.sh PROD $CIRCLE_BUILD_NUM
+      - .deploy/ebs_deploy.sh ap-member PROD $CIRCLE_BUILD_NUM

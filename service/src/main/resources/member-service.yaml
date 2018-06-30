@@ -1,0 +1,169 @@
+authRealm: tcjwt
+authDomain: "${AUTH_DOMAIN}"
+
+useResponseFilter: false
+
+eventStrategies:
+      VERIFY_USER_EMAIL: com.appirio.service.notifications.strategy.VerifyUserEmailStrategy
+
+# Database settings.
+
+databases:
+
+  - datasourceName: oltp
+
+    # the name of your JDBC driver
+    driverClass: com.informix.jdbc.IfxDriver
+
+    # the username
+    user: "${OLTP_USER}"
+
+    password: "${OLTP_PW}"
+
+    validationQuery: select 1 from systables
+
+    # the JDBC URL
+    url: "${OLTP_URL}"
+
+    # the minimum number of connections to keep open
+    minSize: 2
+
+    initialSize: 2
+
+    # the maximum number of connections to keep open
+    maxSize: 5
+
+    # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+    minIdleTime: 5 minutes
+
+  - datasourceName: dw
+
+    # the name of your JDBC driver
+    driverClass: com.informix.jdbc.IfxDriver
+
+    # the username
+    user: "${DW_USER}"
+
+    password: "${DW_PW}"
+
+    validationQuery: select 1 from systables
+
+    # the JDBC URL
+    url: "${DW_URL}"
+
+    # the minimum number of connections to keep open
+    minSize: 2
+
+    initialSize: 2
+    # the maximum number of connections to keep open
+    maxSize: 5
+
+    # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+    minIdleTime: 5 minutes
+
+# use the simple server factory if you only want to run on a single port
+#server:
+#  type: simple
+#  connector:
+#    type: http
+#    port: 8080
+
+server:
+  rootPath: '/v3/*'
+#  softNofileLimit: 1000
+#  hardNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      port: 8080
+#    - type: https
+#      port: 8443
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+# this requires the alpn-boot library on the JVM's boot classpath
+#    - type: spdy3
+#      port: 8445
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+  adminConnectors:
+    - type: http
+      port: 8081
+#    - type: https
+#      port: 8444
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+
+    # Sets the level for 'com.example.app' to DEBUG.
+    com.appirio: DEBUG
+    vc.inreach: DEBUG
+
+    org.hibernate.SQL: ALL
+
+  appenders:
+    - type: console
+      target: stdout
+      threshold: ALL
+      timeZone: UTC
+
+    - type: file
+      currentLogFilename: /var/log/ap-member.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /var/log/ap-member-%d.log
+      archivedFileCount: 5
+      timeZone: UTC
+      logFormat:  "%-5level [%d{yyyy-dd-mm HH:mm:ss.SSS}] [%thread] %logger - %msg%n"
+
+authScheme: v3
+
+# File service domain
+fileServiceDomain: api.topcoder.com
+
+# Photo URL domain
+photoURLDomain: https://topcoder-prod-media.s3.amazonaws.com
+
+# Dynamodb URL
+dynamoDBUrl: "${DYNAMODB_URL}"
+
+# Member ES index name
+memberEsIndex: "${MEMBER_ES_INDEX}"
+
+# elasticsearch URL
+elasticSearchUrl: "${ELASTIC_SEARCH_URL}"
+# elasticsearch default limit and it is optional and default to use 11 define in MemberSearchManager
+elasticsearchDefaultLimit: 11
+# elasticsearch default limit for admin search and it is optional and default to use 50 define in MemberSearchManager
+elasticsearchDefaultAdminLimit: 50
+# elasticsearch cache flag for nested flag, https://github.com/appirio-tech/tc-lambda-members/blob/dev/src/index.js will cache nested filter but not work for local environemnt
+# throw such error [nested] query does not support [_cache]
+# so please change to true in production
+elasticsearchCacheNestedFilter: false
+# max number of suggestions to return (optional, default to 20)
+#maxMemberSuggestions: 20
+
+#endpoint should be real url like https://api.topcoder-dev.com/v5/bus/events
+#current, we use http://localhost:8087/v3/eventBus for mock tests
+#get live authToken from https://www.topcoder-dev.com/my-dashboard
+eventBusServiceClientConfig:
+  endpoint: "https://api.topcoder-dev.com/v5/bus/events"
+  configuration:
+    authToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJUb3Bjb2RlciBVc2VyIl0sImlzcyI6Imh0dHBzOi8vYXBpLnRvcGNvZGVyLWRldi5jb20iLCJoYW5kbGUiOiJkYW5fZGV2ZWxvcGVyIiwiZXhwIjoxNTI4Mzg1ODQ1LCJ1c2VySWQiOiI0MDE1MjkwNSIsImlhdCI6MTUyODM4NTI0NSwiZW1haWwiOiJ0amVmdHMrZGFuX2RldmVsb3BlckB0b3Bjb2Rlci5jb20iLCJqdGkiOiIwODMzMzJkOC04OTRmLTQ2YjEtYmUzZS0zOTAzZTlmYmI1NjIifQ.n6PZ39_BBZlXmO52MwPVBMmXVJYkKFUhZ8inud2ndGQ"
+
+emailVerificationConfig:
+  subject: "Topcoder - Email Change Verification"
+  verificationAgreeUrl: "https://www.google.co.in/search?q=agree"
+  tokenExpireTimeInMinutes: 60
+
+# Api version
+apiVersion: v3

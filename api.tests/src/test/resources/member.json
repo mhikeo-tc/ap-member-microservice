@@ -1,0 +1,304 @@
+{
+	"memberLoadCreate" :
+				{"param" : {
+					"email" : "auto.usera10@gmail.com",
+					"firstName" : "Test1",
+					"lastName" : "User1",
+					"handle" : "H",
+					"credential" : {
+						"password" : "appirio123$"
+					}
+				}
+			}
+		,
+	"NoOfUsersToCreate" :
+	{"param" : {
+		"userCount" : "1"
+		}
+	},
+	"userCredentials" : [
+	{
+		"param" : {
+		"userId" : "22688955",
+		"username" : "vikasrohit",
+		"password" : "appirio123"
+		}
+	},
+	{
+		"param" : {
+		"userId" : "15050434",
+		"username" : "fireice",
+		"password" : "appirio123"
+		}
+	},
+	{
+	"param" : {
+	"userId" : "1800091",
+	"username" : "scud",
+	"password" : "appirio123@"
+	}
+	},
+	{
+	"param" : {
+	"userId" : "40144815",
+	"username" : "p114489539819",
+	"password" : "appirio123$"
+	}
+	}
+	],
+	"memberCreate" :[
+				{"param" : {
+					"email" : "auto.usera10@gmail.com",
+					"firstName" : "Test51",
+					"lastName" : "User51",
+					"handle" : "H",
+					"credential" : {
+						"password" : "appirio123$"
+					}
+				}
+			}
+		],
+
+	"memberGeneratePhotoUrl" :[
+		{
+			"param" : {
+				"handle" : "fireice"
+		}
+		}
+	],
+	
+	"memberProfile" :[
+			{
+				"param" : {
+					"handle" : "fireice"
+				}
+			}
+	],
+	
+	"memberFinancial" :[
+			{
+				"param" : {
+					"handle" : "fireice"		
+					}
+			}
+			
+	],
+	"memberStatistics" :[
+			{
+				"param" : {
+					"handle" : "fireice"
+				}
+			},
+			{
+				"param" : {
+					"handle" : "fireice",
+					"fields" :{
+						"develop" : ""
+					}
+				}
+			},
+			{
+				"param" : {
+					"handle" : "fireice",
+					"fields" :{
+						"design" : ""
+					}
+				}
+			},
+			{
+				"param" : {
+					"handle" : "fireice",
+					"fields" :{
+						"copilot" : ""
+					}
+				}
+			},
+			{
+				"param" : {
+					"handle" : "scud",
+					"fields" :{
+						"data_science" : ""
+					}
+				}
+			},
+			{
+				"param" : {
+					"handle" : "fireice",
+					"fields" :{
+						"develop" : "",
+						"copilot" : ""
+					}
+				}
+			}
+			,
+			{
+				"param" : {
+					"handle" : "fireice",
+					"fields" :{
+						"develop" : "",
+						"copilot" : "",
+						"data_science" : ""
+					}
+				}
+			}
+	],
+	
+	"memberStatsHistory" :[
+			{
+				"param" : {
+					"handle" : "fireice"
+				}
+			}
+	],
+	
+	"memberStatsDistribution" :[
+			{
+				"param" : {
+					"filter" :{
+						"track": "DEVELOP",
+     				    "subTrack": "ASSEMBLY_COMPETITION"
+     				 }
+				}
+			}
+	],
+	
+	"memberSkills" :[
+			{
+				"param" : {
+					"handle" : "fireice"
+				}
+			},
+			{
+				"param" : {
+					"handle" : "scud"
+				}
+			}
+	],
+	"copilotFeedback" :[
+			{
+				"param" : {
+					"handle" : "fireice"
+				}
+			}
+	],
+	"memberProfileAddFieldsToUpdate" : 
+	{
+	  "param": {
+	  "otherLangName": "TEST",
+	    "description": "Testing update profile",
+	    "addresses":[ {
+	      "streetAddr1": "123",
+	      "streetAddr2": "456",
+	      "city": "Sunnyvale",
+	      "zip": "94086",
+	      "stateCode": "CA",
+	       "type": "HOME"
+	    }],
+	    "homeCountryCode": "CHN",
+	    "competitionCountryCode": "USA",
+	   	"tracks": [
+	      "design",
+	      "develop"
+    	]
+    	}
+    },
+    "memberProfileUpdate" :[
+			{
+				"param" : {
+					"handle" : "FireIce",
+					"password" : "appirio123",
+					"userId" : "15050434",
+				    "firstName": "F_NAME1",
+				    "lastName": "L_NAME1",
+			        "quote": "quote updated2",
+			        "otherLangName": "NIAL",
+			        "email": "email@domain.com.z"
+				}
+			}
+	],
+	"memberPutPhotoUrl" :
+			{
+				"param" : {
+				"token" : "",
+				"contentType": "image/jpeg"
+				}
+			},
+			
+	"defaultParamGeneratePhotoUrl" :
+			{
+		  		"param": {
+		  		  "contentType": "image/jpeg"
+		  		}
+			},
+			
+	"updateMemberSkills" : 
+	{
+	  "param": {
+	    "skills": {
+	      
+	    }
+	  }
+	},
+	"memberExternalAccounts" :[
+			{
+				"param" : {
+					"handle" : "vikasrohit"
+				}
+			},
+			{
+				"param" : {
+					"handle" : "vikasrohit",
+					"fields" :{
+						"linkedIn" : ""
+					}
+				}
+			},
+			{
+				"param" : {
+					"handle" : "vikasrohit",
+					"fields" :{
+						"linkedIn" : "",
+						"twitter" : ""
+					}
+				}
+			},
+			{
+				"param" : {
+					"handle" : "vikasrohit",
+					"fields" :{
+						"linkedIn" : "",
+						"twitter" : "",
+						"behance" : ""
+					}
+				}
+			}
+
+	],
+	
+	"memberGetExternalLinksData" :[
+			{
+				"param" : {
+					"handle" : "pshah1"
+				}
+			}
+	],
+	"memberToUpdateExternalLink" :
+			{
+				"param" : {
+					"handle" : "p114489539819"
+				}
+			}
+	,
+	"updateExternalLink" :[
+	{
+ 		 "param": {
+    		"url": "http://www.github.com/@handle@"
+  		}
+	},
+	{
+ 		 "param": {
+    		"url": "http://www.topcoder.com"
+  		}
+	}
+	]
+}

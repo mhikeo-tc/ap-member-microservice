@@ -1,0 +1,17 @@
+GET members\/stats\/distribution\/
+GET members\/.*\/financial\/
+POST members\/.*\/photoUploadUrl\/
+GET members\/.*\/stats\/history\/
+GET members\/.*\/stats\/
+PUT members\/.*\/photo\/
+GET members\/.*\/skills\/
+PATCH members\/.*\/skills\/
+DELETE members\/.*\/externalLinks\/.*\/
+GET members\/.*\/externalAccounts\/
+GET members\/.*\/externalLinks\/
+POST members\/.*\/externalLinks\/
+GET members\/_search\/
+GET members\/.*\/
+PUT members\/.*\/
+GET members\/_suggest\/.*
+POST members\/.*\/verify\/

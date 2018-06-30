@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="none">
+  <test name="Member Tests">
+<!--   <packages> -->
+<!--     <package name="com.appirio.api.member.tests"></package> -->
+<!--     </packages> -->
+    <classes>
+  <class name="com.appirio.api.member.tests.MemberTest"></class>
+  </classes>
+  </test> <!-- MemberTest -->
+</suite> <!-- Suite -->

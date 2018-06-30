@@ -1,0 +1,1800 @@
+{
+	"info": {
+		"name": "Member Service",
+		"_postman_id": "9bbd3bb2-8ffb-1a54-c5f8-ab072fa0bdfc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Member Profile",
+			"item": [
+				{
+					"name": "Update User Email",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"param\": {\r\n\r\n            \"maxRating\": null,\r\n            \"userId\": 132456,\r\n            \"firstName\": \"F_NAME\",\r\n            \"lastName\": \"L_NAME\",\r\n            \"description\": null,\r\n            \"otherLangName\": \"NIAL\",\r\n            \"handle\": \"heffan\",\r\n            \"handleLower\": \"heffan\",\r\n            \"status\": \"ACTIVE\",\r\n            \"email\": \"heffanNew@email.com\",\r\n            \"addresses\": [],\r\n            \"homeCountryCode\": null,\r\n            \"competitionCountryCode\": \"USA\",\r\n            \"photoURL\": \"http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg\",\r\n            \"tracks\": [\r\n                \"DEVELOP\",\r\n                \"DATA_SCIENCE\"\r\n            ],\r\n            \"updatedAt\": \"2015-10-19T11:33Z\",\r\n            \"createdAt\": \"2014-04-10T10:55Z\",\r\n            \"createdBy\": \"40011578\",\r\n            \"updatedBy\": \"40011578\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan/verify?oldEmail=heffan@email.com&newEmail=heffanNew@email.com&token=qL9UH8k3YOjvyOTR",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "oldEmail",
+									"value": "heffan@email.com"
+								},
+								{
+									"key": "newEmail",
+									"value": "heffanNew@email.com"
+								},
+								{
+									"key": "token",
+									"value": "qL9UH8k3YOjvyOTR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User Email (no email to verify)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan/verify?oldEmail=heffan@email.com&newEmail=heffan11@email.com&token=hT8rVLZstuaeKis1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "oldEmail",
+									"value": "heffan@email.com"
+								},
+								{
+									"key": "newEmail",
+									"value": "heffan11@email.com"
+								},
+								{
+									"key": "token",
+									"value": "hT8rVLZstuaeKis1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Email invalid email",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"param\": {\r\n\r\n            \"maxRating\": null,\r\n            \"userId\": 132456,\r\n            \"firstName\": \"F_NAME\",\r\n            \"lastName\": \"L_NAME\",\r\n            \"description\": null,\r\n            \"otherLangName\": \"NIAL\",\r\n            \"handle\": \"heffan\",\r\n            \"handleLower\": \"heffan\",\r\n            \"status\": \"ACTIVE\",\r\n            \"email\": \"heffan@com\",\r\n            \"addresses\": [],\r\n            \"homeCountryCode\": null,\r\n            \"competitionCountryCode\": \"USA\",\r\n            \"photoURL\": \"http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg\",\r\n            \"tracks\": [\r\n                \"DEVELOP\",\r\n                \"DATA_SCIENCE\"\r\n            ],\r\n            \"updatedAt\": \"2015-10-19T11:33Z\",\r\n            \"createdAt\": \"2014-04-10T10:55Z\",\r\n            \"createdBy\": \"40011578\",\r\n            \"updatedBy\": \"40011578\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get member profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settings\" : {\r\n        \"index\" : {\r\n            \"number_of_shards\" : 3, \r\n            \"number_of_replicas\" : 2 \r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Member Profile Trait",
+			"item": [
+				{
+					"name": "Basic info",
+					"item": [
+						{
+							"name": "Create traits basic info",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"basic_info\",\r\n            \"categoryName\": \"Basic info\",\r\n            \"traits\": {\r\n            \t\"data\": [{\r\n\t\t\t\t\t\"handle\": \"heffan\",\r\n\t\t\t\t\t\"firstName\": \"Thomas\",\r\n\t\t\t\t\t\"lastName\": \"Kranitsas\",\r\n\t\t\t\t\t\"shortBio\": \"There is no great genius without some touch of madness.\",\r\n\t\t\t\t\t\"gender\": \"male\",\r\n\t\t\t\t\t\"tshirtSize\": \"L\",\r\n\t\t\t\t\t\"country\": \"Greece\",\r\n\t\t\t\t\t\"primaryInterestInTopcoder\": \"Copiloting!\"\r\n            \t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create traits basic info with missing fields",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"basic_info\",\r\n            \"categoryName\": \"Basic info\",\r\n            \"traits\": {\r\n            \t\"data\": [{\r\n\t\t\t\t\t\"handle\": \"heffan\",\r\n\t\t\t\t\t\"firstName\": \"Thomas\"\r\n            \t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits basic info",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"basic_info\",\r\n            \"categoryName\": \"Basic info\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [{\r\n\t\t\t\t\t\"handle\": \"heffan\",\r\n\t\t\t\t\t\"firstName\": \"Thomas update\",\r\n\t\t\t\t\t\"lastName\": \"Kranitsas\",\r\n\t\t\t\t\t\"shortBio\": \"There is no great genius without some touch of madness.\",\r\n\t\t\t\t\t\"gender\": \"male\",\r\n\t\t\t\t\t\"tshirtSize\": \"L\",\r\n\t\t\t\t\t\"country\": \"Greece\",\r\n\t\t\t\t\t\"primaryInterestInTopcoder\": \"Copiloting!\"\r\n            \t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get traits basic info",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"basic_info\",\r\n            \"categoryName\": \"Basic info\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [{\r\n\t\t\t\t\t\"handle\": \"heffan\",\r\n\t\t\t\t\t\"firstName\": \"Thomas\",\r\n\t\t\t\t\t\"lastName\": \"Kranitsas\",\r\n\t\t\t\t\t\"shortBio\": \"There is no great genius without some touch of madness.\",\r\n\t\t\t\t\t\"gender\": \"male\",\r\n\t\t\t\t\t\"tshirtSize\": \"L\",\r\n\t\t\t\t\t\"country\": \"Greece\",\r\n\t\t\t\t\t\"primaryInterestInTopcoder\": \"Copiloting!\"\r\n            \t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits?traitIds=basic_info",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									],
+									"query": [
+										{
+											"key": "traitIds",
+											"value": "basic_info"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete traits basic info",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"basic_info\",\r\n            \"categoryName\": \"Basic info\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [{\r\n\t\t\t\t\t\"handle\": \"heffan\",\r\n\t\t\t\t\t\"firstName\": \"Thomas\",\r\n\t\t\t\t\t\"lastName\": \"Kranitsas\",\r\n\t\t\t\t\t\"shortBio\": \"There is no great genius without some touch of madness.\",\r\n\t\t\t\t\t\"gender\": \"male\",\r\n\t\t\t\t\t\"tshirtSize\": \"L\",\r\n\t\t\t\t\t\"country\": \"Greece\",\r\n\t\t\t\t\t\"primaryInterestInTopcoder\": \"Copiloting!\"\r\n            \t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits?traitIds=basic_info",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									],
+									"query": [
+										{
+											"key": "traitIds",
+											"value": "basic_info",
+											"equals": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Education",
+					"item": [
+						{
+							"name": "Create traits education",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"education\",\r\n            \"categoryName\": \"Education\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"type\": \"University\",\r\n\t\t\t          \"schoolCollegeName\": \"University of applied Sciences of Thessaly\",\r\n\t\t\t          \"major\": \"Software Engineering\",\r\n\t\t\t          \"timePeriodFrom\": \"2014-09-01T00:00:00.000Z\",\r\n\t\t\t          \"timePeriodTo\": \"2019-09-30T00:00:00.000Z\",\r\n\t\t\t          \"graduated\": false\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits education",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"education\",\r\n            \"categoryName\": \"Education\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"type\": \"University\",\r\n\t\t\t          \"schoolCollegeName\": \"University of applied Sciences of Thessaly\",\r\n\t\t\t          \"major\": \"Software Engineering update\",\r\n\t\t\t          \"timePeriodFrom\": \"2014-09-01T00:00:00.000Z\",\r\n\t\t\t          \"timePeriodTo\": \"2019-09-30T00:00:00.000Z\",\r\n\t\t\t          \"graduated\": false\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Work",
+					"item": [
+						{
+							"name": "Create traits work",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"work\",\r\n            \"categoryName\": \"Work\",\r\n            \"updatedAt\": \"2015-10-19T11:33Z\",\r\n            \"createdAt\": \"2014-04-10T10:55Z\",\r\n            \"createdBy\": 40011578,\r\n            \"updatedBy\": 40011578,\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"company\": \"Topcoder\",\r\n\t\t\t          \"position\": \"Copilot\",\r\n\t\t\t          \"cityTown\": \"Karditsa\",\r\n\t\t\t          \"timePeriodFrom\": \"2017-10-14T00:00:00.000Z\",\r\n\t\t\t          \"timePeriodTo\": \"2018-05-18T00:00:00.000Z\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits work",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"work\",\r\n            \"categoryName\": \"Work\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"company\": \"Topcoder\",\r\n\t\t\t          \"position\": \"Copilot\",\r\n\t\t\t          \"cityTown\": \"Karditsa update\",\r\n\t\t\t          \"timePeriodFrom\": \"2017-10-14T00:00:00.000Z\",\r\n\t\t\t          \"timePeriodTo\": \"2018-05-18T00:00:00.000Z\"\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Skills",
+					"item": [
+						{
+							"name": "Create traits skill",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"skill\",\r\n            \"categoryName\": \"Skill\",\r\n            \"updatedAt\": \"2015-10-19T11:33Z\",\r\n            \"createdAt\": \"2014-04-10T10:55Z\",\r\n            \"createdBy\": 40011578,\r\n            \"updatedBy\": 40011578,\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n        \t\t\t \"design\": [],\r\n\t\t\t\t      \"development\": [\r\n\t\t\t\t        \"java\",\r\n\t\t\t\t        \"reactjs\",\r\n\t\t\t\t        \"nodejs\",\r\n\t\t\t\t        \"c++\"\r\n\t\t\t\t      ],\r\n\t\t\t\t      \"dataScience\": []\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits skill",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"skill\",\r\n            \"categoryName\": \"Skill\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n        \t\t\t \"design\": [\"html\"],\r\n\t\t\t\t      \"development\": [\r\n\t\t\t\t        \"java\",\r\n\t\t\t\t        \"reactjs\",\r\n\t\t\t\t        \"nodejs\",\r\n\t\t\t\t        \"c++\"\r\n\t\t\t\t      ],\r\n\t\t\t\t      \"dataScience\": []\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Communities",
+					"item": [
+						{
+							"name": "Create traits communities",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"communities\",\r\n            \"categoryName\": \"Communities\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n        \t\t\t  \"cognitive\": true,\r\n\t\t\t\t      \"blockchain\": true,\r\n\t\t\t\t      \"ios\": true,\r\n\t\t\t\t      \"predix\": true\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits communities",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"communities\",\r\n            \"categoryName\": \"Communities\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n        \t\t\t  \"cognitive\": true,\r\n\t\t\t\t      \"blockchain\": true,\r\n\t\t\t\t      \"ios\": true,\r\n\t\t\t\t      \"predix\": false\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "Create traits organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"organization\",\r\n            \"categoryName\": \"Organization\",\r\n            \"updatedAt\": \"2015-10-19T11:33Z\",\r\n            \"createdAt\": \"2014-04-10T10:55Z\",\r\n            \"createdBy\": 40011578,\r\n            \"updatedBy\": 40011578,\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"name\": \"Organization ABC\",\r\n\t\t\t          \"sector\": \"Software Engineering\",\r\n\t\t\t          \"city\": \"Karditsa\",\r\n\t\t\t          \"timePeriodFrom\": \"2017-10-14T00:00:00.000Z\",\r\n\t\t\t          \"timePeriodTo\": \"2018-06-04T00:00:00.000Z\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"organization\",\r\n            \"categoryName\": \"Organization\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"name\": \"Organization ABC Updated\",\r\n\t\t\t          \"sector\": \"Software Engineering\",\r\n\t\t\t          \"city\": \"Karditsa\",\r\n\t\t\t          \"timePeriodFrom\": \"2017-10-14T00:00:00.000Z\",\r\n\t\t\t          \"timePeriodTo\": \"2018-06-04T00:00:00.000Z\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "languages",
+					"item": [
+						{
+							"name": "Create traits language",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"languages\",\r\n            \"categoryName\": \"Languages\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"language\": \"English\",\r\n\t\t\t          \"spokenLevel\": \"Advanced\",\r\n\t\t\t          \"writtenLevel\": \"Advanced\"\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits language",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"languages\",\r\n            \"categoryName\": \"Languages\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"language\": \"English\",\r\n\t\t\t          \"spokenLevel\": \"Native\",\r\n\t\t\t          \"writtenLevel\": \"Native\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Devices",
+					"item": [
+						{
+							"name": "Create device traits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"device\",\r\n            \"categoryName\": \"Device\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"deviceType\": \"Desktop\",\r\n\t\t\t          \"manufacturer\": \"Apple\",\r\n\t\t\t          \"model\": \"MacBook Pro\",\r\n            \t\t  \"operatingSystem\": \"MacOS\",\r\n            \t\t  \"osVersion\": \"High Sierra 10.13.4\",\r\n            \t\t  \"osLanguage\": \"English\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update device traits",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"device\",\r\n            \"categoryName\": \"Device\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"deviceType\": \"Desktop Updated\",\r\n\t\t\t          \"manufacturer\": \"Apple\",\r\n\t\t\t          \"model\": \"MacBook Pro\",\r\n            \t\t  \"operatingSystem\": \"MacOS\",\r\n            \t\t  \"osVersion\": \"High Sierra 10.13.4\",\r\n            \t\t  \"osLanguage\": \"English\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Software",
+					"item": [
+						{
+							"name": "Create software traits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"software\",\r\n            \"categoryName\": \"Software\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"softwareType\": \"Developer Tools\",\r\n\t\t\t          \"name\": \"Atom\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update software traits",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"software\",\r\n            \"categoryName\": \"Software\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"softwareType\": \"Developer Tools\",\r\n\t\t\t          \"name\": \"VS Code\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Subscription",
+					"item": [
+						{
+							"name": "Create subscription traits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"subscription\",\r\n            \"categoryName\": \"Subscription\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n\t\t\t          \"name\": \"ABC XZY Tier\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update subscription traits",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"subscription\",\r\n            \"categoryName\": \"Subscription\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n\t\t\t          \"name\": \"ABC XYZ Premium Tier\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Service Provider",
+					"item": [
+						{
+							"name": "Create service provider traits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"service_provider\",\r\n            \"categoryName\": \"Service Provider\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"serviceProviderType\": \"Internet Service Provider\",\r\n\t\t\t          \"name\": \"ACME ISP\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update software traits",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"service_provider\",\r\n            \"categoryName\": \"Service Provider\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"serviceProviderType\": \"Internet Service Provider\",\r\n\t\t\t          \"name\": \"ACME ISP 123\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Hobbies",
+					"item": [
+						{
+							"name": "Create traits hobby",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"hobby\",\r\n            \"categoryName\": \"Hobbies\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"hobby\": \"Paragliding\",\r\n\t\t\t          \"description\": \"I'm a certified paragliding pilot!\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update traits hobby",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"education\",\r\n            \"categoryName\": \"Education\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"hobby\": \"Paragliding updated\",\r\n\t\t\t          \"description\": \"I'm a certified paragliding pilot! updated\"\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Personalization",
+					"item": [
+						{
+							"name": "Create personalization trait",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"personalization\",\r\n            \"categoryName\": \"Personalization\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"userConsent\": true\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update personalization trait",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{heffanToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"personalization\",\r\n            \"categoryName\": \"Personalization\",\r\n            \"createdAt\": \"2018-05-20T07:08Z\",\r\n            \"createdBy\": 132456,\r\n            \"updatedAt\": \"2018-05-20T07:08Z\",\r\n            \"updatedBy\": \"132456\",\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n            \t\t  \"userConsent\": false\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+								},
+								"url": {
+									"raw": "{{apiUrl}}/v3/members/heffan/traits",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"v3",
+										"members",
+										"heffan",
+										"traits"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get all traits for user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"param\": [{\r\n            \"traitId\": \"communities\",\r\n            \"categoryName\": \"Communities\",\r\n            \"updatedAt\": \"2015-10-19T11:33Z\",\r\n            \"createdAt\": \"2014-04-10T10:55Z\",\r\n            \"createdBy\": 40011578,\r\n            \"updatedBy\": 40011578,\r\n            \"traits\": {\r\n            \t\"data\": [\r\n            \t\t{\r\n        \t\t\t  \"cognitive\": true,\r\n\t\t\t\t      \"blockchain\": true,\r\n\t\t\t\t      \"ios\": true,\r\n\t\t\t\t      \"predix\": true\r\n            \t\t\t\r\n            \t\t}]\r\n            }\r\n  }]\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan/traits",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan",
+								"traits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all traits for user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan/traits",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan",
+								"traits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create all traits",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"param\": [{\r\n                \"traitId\": \"communities\",\r\n                \"categoryName\": \"Communities\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"cognitive\": false,\r\n                            \"blockchain\": true,\r\n                            \"ios\": true,\r\n                            \"predix\": true\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            {\r\n                \"traitId\": \"education\",\r\n                \"categoryName\": \"Education\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"type\": \"University\",\r\n                            \"schoolCollegeName\": \"University of applied Sciences of Thessaly\",\r\n                            \"major\": \"Software Engineering update 2\",\r\n                            \"timePeriodFrom\": \"2014-09-01T00:00:00.000Z\",\r\n                            \"timePeriodTo\": \"2019-09-30T00:00:00.000Z\",\r\n                            \"graduated\": false\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            {\r\n                \"traitId\": \"skill\",\r\n                \"categoryName\": \"Skill\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"design\": [\"xml\"],\r\n                            \"development\": [\r\n                                \"java\",\r\n                                \"reactjs\",\r\n                                \"nodejs\",\r\n                                \"c++\"\r\n                            ],\r\n                            \"dataScience\": [\"data\"]\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            {\r\n                \"traitId\": \"work\",\r\n                \"categoryName\": \"Work\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"company\": \"Topcoder\",\r\n                            \"position\": \"Copilot\",\r\n                            \"cityTown\": \"Karditsa update 2\",\r\n                            \"timePeriodFrom\": \"2017-10-14T00:00:00.000Z\",\r\n                            \"timePeriodTo\": \"2018-05-18T00:00:00.000Z\"\r\n                        }\r\n                    ]\r\n                }\r\n            }]\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan/traits",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan",
+								"traits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update all traits",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{heffanToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"param\": [{\r\n                \"traitId\": \"communities\",\r\n                \"categoryName\": \"Communities\",\r\n                \"createdAt\": \"2018-05-21T09:54Z\",\r\n                \"createdBy\": 132456,\r\n                \"updatedAt\": \"2018-05-21T09:54Z\",\r\n                \"updatedBy\": \"132456\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"cognitive\": false,\r\n                            \"blockchain\": false,\r\n                            \"ios\": true,\r\n                            \"predix\": true\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            {\r\n                \"traitId\": \"education\",\r\n                \"categoryName\": \"Education\",\r\n                \"createdAt\": \"2018-05-21T09:54Z\",\r\n                \"createdBy\": 132456,\r\n                \"updatedAt\": \"2018-05-21T09:54Z\",\r\n                \"updatedBy\": \"132456\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"type\": \"University\",\r\n                            \"schoolCollegeName\": \"University of applied Sciences of Thessaly\",\r\n                            \"major\": \"Software Engineering update 3\",\r\n                            \"timePeriodFrom\": \"2014-09-01T00:00:00.000Z\",\r\n                            \"timePeriodTo\": \"2019-09-30T00:00:00.000Z\",\r\n                            \"graduated\": false\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            {\r\n                \"traitId\": \"skill\",\r\n                \"categoryName\": \"Skill\",\r\n                \"createdAt\": \"2018-05-21T09:54Z\",\r\n                \"createdBy\": 132456,\r\n                \"updatedAt\": \"2018-05-21T09:54Z\",\r\n                \"updatedBy\": \"132456\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"design\": [\"xml2\"],\r\n                            \"development\": [\r\n                                \"java\",\r\n                                \"reactjs\",\r\n                                \"nodejs\",\r\n                                \"c++\"\r\n                            ],\r\n                            \"dataScience\": [\"data2\"]\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            {\r\n                \"traitId\": \"work\",\r\n                \"categoryName\": \"Work\",\r\n                \"createdAt\": \"2018-05-21T09:54Z\",\r\n                \"createdBy\": 132456,\r\n                \"updatedAt\": \"2018-05-21T09:54Z\",\r\n                \"updatedBy\": \"132456\",\r\n                \"traits\": {\r\n                    \"data\": [\r\n                        {\r\n                            \"company\": \"Topcoder\",\r\n                            \"position\": \"Copilot\",\r\n                            \"cityTown\": \"Karditsa update 3\",\r\n                            \"timePeriodFrom\": \"2017-10-14T00:00:00.000Z\",\r\n                            \"timePeriodTo\": \"2018-05-18T00:00:00.000Z\"\r\n                        }\r\n                    ]\r\n                }\r\n            }]\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/v3/members/heffan/traits",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"v3",
+								"members",
+								"heffan",
+								"traits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ES - LIST Indexes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/_cat/indices?v=",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"_cat",
+						"indices"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES - CREATE Index Members",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"mappings\":{\n      \"profile\":{\n         \"properties\":{\n            \"handleSuggest\" : { \n                \"type\" : \"completion\",\n                \"analyzer\" : \"simple\",\n                \"search_analyzer\" : \"simple\",\n                \"payloads\" : true\n            },\n            \"skills\":{\n               \"type\":\"nested\",\n               \"properties\":{\n                  \"score\":{\n                     \"type\":\"double\"\n                  },\n                  \"sources\":{\"type\" : \"string\"},\n                  \"name\":{\n                     \"type\":\"string\"\n                  },\n                  \"id\":{\n                       \"type\":\"string\"\n                    }\n               }\n            }\n         }\n      }\n   }\n}\n"
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/members/",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"members",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES - DELETE Index Members",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/members/",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"members",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES - Search Members",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"settings\" : {\r\n        \"index\" : {\r\n            \"number_of_shards\" : 3, \r\n            \"number_of_replicas\" : 2 \r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/members/_search?pretty=true&q=*:*",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"members",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": "true"
+						},
+						{
+							"key": "q",
+							"value": "*:*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES - Create skill sample1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"skills\": [{\r\n\t\t\t\"id\": \"128\",\r\n\t\t\t\"score\": 6,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Bootstrap\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"281\",\r\n\t\t\t\"score\": 42,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"MongoDB\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"401\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"XML\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"130\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Brute Force\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"133\",\r\n\t\t\t\"score\": 13,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"C++\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"132\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"C#\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"286\",\r\n\t\t\t\"score\": 109,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Node.js\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"284\",\r\n\t\t\t\"score\": 5,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"MySql\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"259\",\r\n\t\t\t\"score\": 5,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"JSON\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"387\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Web Services\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"148\",\r\n\t\t\t\"score\": 7,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Coffeescript\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"306\",\r\n\t\t\t\"score\": 14,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"PostgreSQL\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"167\",\r\n\t\t\t\"score\": 4,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Dynamic Programming\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"317\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Redis\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"316\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Recursion\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"187\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"USER_ENTERED\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Forms\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"190\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Geometry\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"177\",\r\n\t\t\t\"score\": 8,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Express\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"301\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Phonegap\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"303\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"PHP\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"200\",\r\n\t\t\t\"score\": 4,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Graph Theory\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"202\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Greedy\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"197\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"USER_ENTERED\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Google Dart\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"196\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"USER_ENTERED\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Google App Engine\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"349\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Simulation\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"347\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Simple Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"323\",\r\n\t\t\t\"score\": 6,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"REST\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"212\",\r\n\t\t\t\"score\": 69,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTML\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"213\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTML5\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"214\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTTP\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"328\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Salesforce\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"100\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \".NET\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"235\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"IIS\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"110\",\r\n\t\t\t\"score\": 11,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"AngularJS\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"106\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Ajax\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"356\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"SQL Server\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"255\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"jQuery\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"118\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"USER_ENTERED\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Appium\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"117\",\r\n\t\t\t\"score\": 11,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"API\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"115\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"USER_ENTERED\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Apache Kafka\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"251\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"USER_ENTERED\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Jekyll\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"353\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Sorting\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"248\",\r\n\t\t\t\"score\": 79,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"JavaScript\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"247\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Java\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"121\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"ASP.NET\"\r\n\t\t}\r\n\t],\r\n\t\"userId\": 22756320,\r\n\t\"handleSuggest\": {\r\n\t\t\"output\": \"Sky_\",\r\n\t\t\"input\": \"sky_\",\r\n\t\t\"payload\": {\r\n\t\t\t\"firstName\": \"F_NAME\",\r\n\t\t\t\"lastName\": \"L_NAME\",\r\n\t\t\t\"photoURL\": \"https://www.topcoder.com/i/m/Sky_.jpeg\",\r\n\t\t\t\"handle\": \"Sky_\",\r\n\t\t\t\"userId\": 22756320\r\n\t\t}\r\n\t},\r\n\t\"lastName\": \"L_NAME\",\r\n\t\"addresses\": [{\r\n\t\t\t\"streetAddr2\": \"address_2\",\r\n\t\t\t\"zip\": \"47579\",\r\n\t\t\t\"streetAddr1\": \"123 Main Street\",\r\n\t\t\t\"city\": \"Santa Clause\",\r\n\t\t\t\"stateCode\": \"IN\",\r\n\t\t\t\"type\": \"HOME\"\r\n\t\t}\r\n\t],\r\n\t\"updatedBy\": \"22756320\",\r\n\t\"homeCountryCode\": \"POL\",\r\n\t\"handle\": \"Sky_\",\r\n\t\"otherLangName\": \"NIAL\",\r\n\t\"tracks\": [\r\n\t\t\"DEVELOP\",\r\n\t\t\"DATA_SCIENCE\"\r\n\t],\r\n\t\"photoURL\": \"https://www.topcoder.com/i/m/Sky_.jpeg\",\r\n\t\"createdAt\": 1224957498000,\r\n\t\"firstName\": \"F_NAME\",\r\n\t\"createdBy\": \"22756320\",\r\n\t\"competitionCountryCode\": \"POL\",\r\n\t\"email\": \"email@domain.com.z\",\r\n\t\"updatedAt\": 1445632730000,\r\n\t\"status\": \"ACTIVE\",\r\n\t\"financial\": {\r\n\t\t\"amount\": 6400.0,\r\n\t\t\"status\": \"Owed\"\r\n\t},\r\n\t\"type\": \"jdbc\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/members/profile/22756320",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"members",
+						"profile",
+						"22756320"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES - Create skill sample2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"skills\": [{\r\n\t\t\t\"id\": \"274\",\r\n\t\t\t\"score\": 206,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"101\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"ActionScript\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"200\",\r\n\t\t\t\"score\": 153,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Graph Theory\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"173\",\r\n\t\t\t\"score\": 6,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Compression\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"202\",\r\n\t\t\t\"score\": 136,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Greedy\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"110\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"AngularJS\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"128\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Bootstrap\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"349\",\r\n\t\t\t\"score\": 324,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Simulation\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"130\",\r\n\t\t\t\"score\": 136,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Brute Force\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"401\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"XML\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"167\",\r\n\t\t\t\"score\": 162,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Dynamic Programming\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"347\",\r\n\t\t\t\"score\": 144,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Simple Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"316\",\r\n\t\t\t\"score\": 27,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Recursion\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"105\",\r\n\t\t\t\"score\": 13,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Advanced Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"153\",\r\n\t\t\t\"score\": 9,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"CSS\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"190\",\r\n\t\t\t\"score\": 270,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Geometry\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"353\",\r\n\t\t\t\"score\": 40,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Sorting\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"248\",\r\n\t\t\t\"score\": 12,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"JavaScript\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"212\",\r\n\t\t\t\"score\": 13,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTML\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"334\",\r\n\t\t\t\"score\": 204,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Search\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"247\",\r\n\t\t\t\"score\": 1164,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Java\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"213\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTML5\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"214\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTTP\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"360\",\r\n\t\t\t\"score\": 71,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"String Manipulation\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"361\",\r\n\t\t\t\"score\": 28,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"String Parsing\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"181\",\r\n\t\t\t\"score\": 9,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Flash\"\r\n\t\t}\r\n\t],\r\n\t\"userId\": 20539063,\r\n\t\"handleSuggest\": {\r\n\t\t\"output\": \"bohuss\",\r\n\t\t\"input\": \"bohuss\",\r\n\t\t\"payload\": {\r\n\t\t\t\"firstName\": \"F_NAME\",\r\n\t\t\t\"lastName\": \"L_NAME\",\r\n\t\t\t\"photoURL\": \"\",\r\n\t\t\t\"handle\": \"bohuss\",\r\n\t\t\t\"userId\": 20539063\r\n\t\t}\r\n\t},\r\n\t\"lastName\": \"L_NAME\",\r\n\t\"addresses\": [{\r\n\t\t\t\"streetAddr2\": \"address_2\",\r\n\t\t\t\"zip\": \"47579\",\r\n\t\t\t\"streetAddr1\": \"123 Main Street\",\r\n\t\t\t\"city\": \"Santa Clause\",\r\n\t\t\t\"stateCode\": \"IN\",\r\n\t\t\t\"type\": \"HOME\"\r\n\t\t}\r\n\t],\r\n\t\"updatedBy\": \"20539063\",\r\n\t\"handle\": \"bohuss\",\r\n\t\"otherLangName\": \"NIAL\",\r\n\t\"tracks\": [\r\n\t\t\"DESIGN\",\r\n\t\t\"DEVELOP\",\r\n\t\t\"DATA_SCIENCE\"\r\n\t],\r\n\t\"createdAt\": 1136786389000,\r\n\t\"firstName\": \"F_NAME\",\r\n\t\"createdBy\": \"20539063\",\r\n\t\"competitionCountryCode\": \"SVK\",\r\n\t\"email\": \"email@domain.com.z\",\r\n\t\"updatedAt\": 1424212866000,\r\n\t\"status\": \"ACTIVE\",\r\n\t\"financial\": {\r\n\t\t\"amount\": 27800.0,\r\n\t\t\"status\": \"Paid\"\r\n\t},\r\n\t\"type\": \"jdbc\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/members/profile/20539063",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"members",
+						"profile",
+						"20539063"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES - Create skill sample3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"skills\": [{\r\n\t\t\t\"id\": \"274\",\r\n\t\t\t\"score\": 206,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"101\",\r\n\t\t\t\"score\": 3,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"ActionScript\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"200\",\r\n\t\t\t\"score\": 153,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Graph Theory\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"173\",\r\n\t\t\t\"score\": 6,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Compression\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"202\",\r\n\t\t\t\"score\": 136,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Greedy\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"110\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"AngularJS\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"128\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Bootstrap\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"349\",\r\n\t\t\t\"score\": 324,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Simulation\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"130\",\r\n\t\t\t\"score\": 136,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Brute Force\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"401\",\r\n\t\t\t\"score\": 2,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"XML\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"167\",\r\n\t\t\t\"score\": 162,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Dynamic Programming\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"347\",\r\n\t\t\t\"score\": 144,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Simple Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"316\",\r\n\t\t\t\"score\": 27,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Recursion\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"105\",\r\n\t\t\t\"score\": 13,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Advanced Math\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"153\",\r\n\t\t\t\"score\": 9,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"CSS\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"190\",\r\n\t\t\t\"score\": 270,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Geometry\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"353\",\r\n\t\t\t\"score\": 40,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Sorting\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"248\",\r\n\t\t\t\"score\": 12,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"JavaScript\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"212\",\r\n\t\t\t\"score\": 13,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTML\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"334\",\r\n\t\t\t\"score\": 204,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Search\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"247\",\r\n\t\t\t\"score\": 1335,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Java\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"213\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTML5\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"214\",\r\n\t\t\t\"score\": 1,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"HTTP\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"360\",\r\n\t\t\t\"score\": 71,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"String Manipulation\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"361\",\r\n\t\t\t\"score\": 28,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"String Parsing\"\r\n\t\t}, {\r\n\t\t\t\"id\": \"181\",\r\n\t\t\t\"score\": 9,\r\n\t\t\t\"sources\": [\r\n\t\t\t\t\"CHALLENGE\"\r\n\t\t\t],\r\n\t\t\t\"name\": \"Flash\"\r\n\t\t}\r\n\t],\r\n\t\"userId\": 20539064,\r\n\t\"handleSuggest\": {\r\n\t\t\"output\": \"someoth\",\r\n\t\t\"input\": \"someoth\",\r\n\t\t\"payload\": {\r\n\t\t\t\"firstName\": \"F_NAME\",\r\n\t\t\t\"lastName\": \"L_NAME\",\r\n\t\t\t\"photoURL\": \"\",\r\n\t\t\t\"handle\": \"someoth\",\r\n\t\t\t\"userId\": 20539064\r\n\t\t}\r\n\t},\r\n\t\"lastName\": \"L_NAME\",\r\n\t\"addresses\": [{\r\n\t\t\t\"streetAddr2\": \"address_2\",\r\n\t\t\t\"zip\": \"47579\",\r\n\t\t\t\"streetAddr1\": \"123 Main Street\",\r\n\t\t\t\"city\": \"Santa Clause\",\r\n\t\t\t\"stateCode\": \"IN\",\r\n\t\t\t\"type\": \"HOME\"\r\n\t\t}\r\n\t],\r\n\t\"updatedBy\": \"20539064\",\r\n\t\"handle\": \"someoth\",\r\n\t\"otherLangName\": \"NIAL\",\r\n\t\"tracks\": [\r\n\t\t\"DESIGN\",\r\n\t\t\"DEVELOP\",\r\n\t\t\"DATA_SCIENCE\"\r\n\t],\r\n\t\"createdAt\": 1136786389000,\r\n\t\"firstName\": \"F_NAME\",\r\n\t\"createdBy\": \"20539063\",\r\n\t\"competitionCountryCode\": \"SVK\",\r\n\t\"email\": \"email@domain.com.z\",\r\n\t\"updatedAt\": 1424212866000,\r\n\t\"status\": \"ACTIVE\",\r\n\t\"financial\": {\r\n\t\t\"amount\": 27800.0,\r\n\t\t\"status\": \"Paid\"\r\n\t},\r\n\t\"type\": \"jdbc\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{elasticSearchUrl}}/members/profile/20539064",
+					"host": [
+						"{{elasticSearchUrl}}"
+					],
+					"path": [
+						"members",
+						"profile",
+						"20539064"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search all active members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/members/_search?status=ACTIVE",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"members",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "ACTIVE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Java Leaderboards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/leaderboards?filter=type%3DMEMBER_SKILL%26name%3Djava",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "type%3DMEMBER_SKILL%26name%3Djava"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HTML Leaderboards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/leaderboards?filter=type%3DMEMBER_SKILL%26name%3DHtml",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "type%3DMEMBER_SKILL%26name%3DHtml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Java Leaderboards By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/leaderboards?filter=type%3DMEMBER_SKILL%26id",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "type%3DMEMBER_SKILL%26id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HTML Leaderboards By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/leaderboards?filter=type%3DMEMBER_SKILL%26id%3D212",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "type%3DMEMBER_SKILL%26id%3D212"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Members Suggestions as admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{adminToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"settings\" : {\r\n        \"index\" : {\r\n            \"number_of_shards\" : 3, \r\n            \"number_of_replicas\" : 2 \r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/members/_suggest/test",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"members",
+						"_suggest",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Members Suggestions without authorization",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJyZXZpZXdlciJdLCJpc3MiOiJodHRwczovL2FwaS50b3Bjb2Rlci1kZXYuY29tIiwiaGFuZGxlIjoicmV2aWV3ZXIyIiwiZXhwIjoxNzY2Mjg5MjQ2LCJ1c2VySWQiOiIxMjM1IiwiaWF0IjoxNDUwOTI5MjQ2LCJlbWFpbCI6bnVsbCwianRpIjoiMTM2OWM2MDAtZTBhMS00NTI1LWE3YzctNTZiZTdkODEzZjUxIn0.RrkQ7srca99ctABa_VM9VYediC2mcg4hPOiQ1Roou14",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"settings\" : {\r\n        \"index\" : {\r\n            \"number_of_shards\" : 3, \r\n            \"number_of_replicas\" : 2 \r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{apiUrl}}/v3/members/_suggest/test",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"v3",
+						"members",
+						"_suggest",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

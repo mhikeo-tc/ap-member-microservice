@@ -1,0 +1,54 @@
+version: '2'
+services:
+    informix:
+        image: "appiriodevops/informix:1b3d4ef"
+        ports:
+            - "2021:2021"
+    dynamodb: 
+        image: "tray/dynamodb-local"
+        ports: 
+            - "7777:7777"
+        command: "-inMemory -port 7777"
+    awscli:
+        build: aws-cli
+        environment:
+            - "IP=$IP"
+        depends_on: 
+            - dynamodb
+    kafka:
+        image: spotify/kafka
+        environment:
+            ADVERTISED_HOST: $DOCKER_IP
+            ADVERTISED_PORT: 9092
+        ports:
+            - "2181:2181"
+            - "9092:9092"
+    elasticsearch:
+        image: "elasticsearch:2.3"
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+    redis:
+        image: "redis:3.0.7"
+        ports:
+            - "6379:6379"
+    members-es:
+        build: "logstash"
+        command: bash -c "sleep 30 && sh /root/mapping.sh && sleep 15 && j2 /localconf/members-es-conf.j2 > members-es.conf && cat /localconf/members-es.conf && logstash -f /localconf/members-es.conf"
+        environment:
+            - "DB_CONNECTION=jdbc:informix-sqli://$DOCKER_IP:2021/tcs_catalog:INFORMIXSERVER=informixoltp_tcp;"
+            - "DB_USER=informix"
+            - "DB_PASSWORD=1nf0rm1x"
+            - "ES_HOST_PORT=$DOCKER_IP:9200"
+            - "DYNAMODB_URL=http://$DOCKER_IP:7777"
+            - "DYNAMO_STREAMS_URL=http://$DOCKER_IP:7777"
+            - "REDIS_HOST=$DOCKER_IP:6379"
+            - "CONF_FILENAME=members-es"
+        volumes:
+            - $PWD/conf:/localconf
+            - /mnt/logs:/var/log
+        depends_on:
+            - awscli
+            - informix
+            - elasticsearch
+            - redis

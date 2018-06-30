@@ -1,0 +1,63 @@
+{
+    "MemberProfile": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "status": {
+                        "S": "ACTIVE"
+                    }, 
+                    "handleLower": {
+                        "S": "heffan"
+                    }, 
+                    "photoURL": {
+                        "S": "http://img.picturequotes.com/2/9/8712/dont-panic-quote-1.jpg"
+                    }, 
+                    "handle": {
+                        "S": "heffan"
+                    }, 
+                    "addresses": {
+                        "S": "[]"
+                    },
+                    "firstName": {
+                        "S": "F_NAME"
+                    }, 
+                    "lastName": {
+                        "S": "L_NAME"
+                    }, 
+                    "updatedAt": {
+                        "N": "1445254438000"
+                    }, 
+                    "userId": {
+                        "N": "132456"
+                    }, 
+                    "tracks": {
+                        "L": [
+                            {
+                                "S": "DEVELOP"
+                            }, 
+                            {
+                                "S": "DATA_SCIENCE"
+                            }
+                        ]
+                    }, 
+                    "otherLangName": {
+                        "S": "NIAL"
+                    }, 
+                    "createdBy": {
+                        "S": "40011578"
+                    }, 
+                    "updatedBy": {
+                        "S": "40011578"
+                    }, 
+                    "competitionCountryCode": {
+                        "S": "USA"
+                    }, 
+                    "email": {
+                        "S": "heffan@email.com"
+                    }, 
+                    "createdAt": {
+                        "N": "1397127306000"
+                    }
+                }
+            }
+        }]}

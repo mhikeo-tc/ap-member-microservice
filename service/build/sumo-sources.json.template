@@ -1,0 +1,13 @@
+ {
+  "api.version": "v1",
+  "sources": [
+    {
+      "name": "ap-member-@env@",
+      "sourceType": "LocalFile",
+      "multilineProcessingEnabled": false,
+      "pathExpression": "/var/log/ap-member.log",
+      "category": "@env@",
+      "hostName": "ap-member"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+input {
+    dynamodb {
+      type => "dynamodb"
+      endpoint => "{{DYNAMODB_URL}}"
+      streams_endpoint => "{{DYNAMODB_URL}}"
+      perform_stream => false
+      checkpointer => "logstash_input_dynamodb_cptr_MemberProfile"
+      view_type => "new_and_old_images"
+      table_name => "MemberProfile"
+    }
+
+    dynamodb {
+      type => "dynamodb"
+      endpoint => "{{DYNAMODB_URL}}"
+      streams_endpoint => "{{DYNAMODB_URL}}"
+      perform_stream => false
+      checkpointer => "logstash_input_dynamodb_cptr_MemberAggregatedSkills"
+      view_type => "new_and_old_images"
+      table_name => "MemberAggregatedSkills"
+    }
+
+    dynamodb {
+      type => "dynamodb"
+      endpoint => "{{DYNAMODB_URL}}"
+      streams_endpoint => "{{DYNAMODB_URL}}"
+      perform_stream => false
+      checkpointer => "logstash_input_dynamodb_cptr_MemberStats"
+      view_type => "new_and_old_images"
+      table_name => "MemberStats"
+    }
+
+    jdbc {
+      type => "jdbc"
+      jdbc_driver_library => "informix.jdbc-3.0.0.JC3.jar"
+      jdbc_driver_class => "com.informix.jdbc.IfxDriver"
+      jdbc_connection_string => "{{DB_CONNECTION}}"
+      jdbc_user => "{{DB_USER}}"
+      jdbc_password => "{{DB_PASSWORD}}"
+      schedule => "0 * * * *"
+      statement => "SELECT p.user_id AS userId, SUM(gross_amount) AS amount, psl.payment_status_desc AS status FROM informixoltp:payment p INNER JOIN informixoltp:payment_detail pd ON p.most_recent_detail_id = pd.payment_detail_id INNER JOIN informixoltp:payment_status_lu psl ON pd.payment_status_id = psl.payment_status_id AND psl.payment_status_id NOT IN (65, 69) AND payment_status_active_ind = 1 INNER JOIN informixoltp:payment_type_lu ptl ON pd.payment_type_id = ptl.payment_type_id AND ptl.payment_type_id NOT IN (3, 5) GROUP BY p.user_id, psl.payment_status_desc "
+    }
+
+    # to update the old profile document with no handleSuggest
+    elasticsearch {
+      type => "elasticsearch"
+      hosts => "{{ES_HOST_PORT}}"
+      ssl => false
+      index => members
+      query => '{ "query": { "filtered": { "filter": { "bool": { "must": [ { "missing": { "field": "handleSuggest" } }, { "type": { "value": "profile" } } ] } } } } }'
+    }
+}
+
+filter {
+    if [type] == "dynamodb" {
+      dynamodb {}
+      mutate {
+         remove_field => ["quote", "message", "keys", "@version", "@timestamp", "host", "eventName", "handleLower", "type"]
+         convert => { 
+            "userId" => "integer"
+          }
+      }
+
+      # create handle suggester
+      if [handle] and [userId] {
+        mutate {
+          add_field => {
+            "[handleSuggest][input]" => "%{handle}"
+            "[handleSuggest][payload][userId]" => "%{userId}"
+          }
+        }
+
+        mutate {
+          lowercase => [ "[handleSuggest][input]" ]
+        }
+      }
+
+      # removing some extra data from stats
+      if [DEVELOP] {
+        json {
+          source => "DEVELOP"
+          target => "[stats][DEVELOP]"
+        }
+        mutate {  
+          remove_field => [
+            "[stats][DEVELOP][subtracks][submissions]",
+            "DEVELOP"
+          ]
+        }
+      }
+
+      if [COPILOT] {
+        json {
+          source => "COPILOT"
+          target => "[stats][COPILOT]"
+        }
+        mutate {
+          remove_field => ["COPILOT"]
+        }
+      }
+
+      if [DESIGN] {
+        json {
+          source => "DESIGN"
+          target => "[stats][DESIGN]"
+        }
+        mutate {
+          remove_field => ["DESIGN"]
+        }
+      }
+
+      if [DATA_SCIENCE] {
+        json {
+          source => "DATA_SCIENCE"
+          target => "[stats][DATA_SCIENCE]"
+        }
+
+        mutate {
+          remove_field => [
+            "[stats][DATA_SCIENCE][SRM][challengeDetails]",
+            "[stats][DATA_SCIENCE][SRM][division1]",
+            "[stats][DATA_SCIENCE][SRM][division2]",
+            "DATA_SCIENCE"
+          ]
+        }
+      }
+
+      if [skills] {
+        skills {
+          source => "skills"
+          redis_host => "{{REDIS_HOST}}"
+          is_array => true
+        }
+      }
+
+      json {
+          source => "maxRating"
+          target => "maxRating"
+      }
+      
+      json {
+          source => "addresses"
+          target => "addresses"
+      }
+    }
+    if [type] == "jdbc" {
+      mutate {
+        remove_field => ["@version", "@timestamp"]
+        rename => { "userid" => "userId" }
+        rename => { "amount" => "[financial][amount]" }
+        rename => { "status" => "[financial][status]" }
+      }
+    }
+
+
+    # to update the old profile document with no handleSuggest
+    if [type] == "elasticsearch" {
+      if [handle] and [userId] {
+        mutate {
+          add_field => {
+            "[handleSuggest][input]" => "%{handle}"
+            "[handleSuggest][payload][userId]" => "%{userId}"
+          }
+        }
+
+        mutate {
+          lowercase => [ "[handleSuggest][input]" ]
+        }
+      }
+    }
+
+    mutate {
+      remove_field => ["type"]
+    }
+}
+
+output {
+    elasticsearch {
+      hosts => "{{ES_HOST_PORT}}"
+      ssl => false
+      index => members
+      document_type => profile
+      document_id => "%{userId}"
+      action => "update"
+      doc_as_upsert => true
+    }
+    #stdout { codec => rubydebug }
+}

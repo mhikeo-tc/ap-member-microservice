@@ -1,0 +1,20 @@
+FROM appiriodevops/ap-microservice-base:0.0.1
+
+MAINTAINER mdesiderio@appirio.com
+LABEL authors="mdesiderio@appirio.com, vikas.agarwal@topcoder.com"
+
+WORKDIR /data
+
+COPY member-microservice.jar /data/member-microservice.jar
+
+COPY member-service.yaml /data/member-service.yaml
+
+COPY newrelic.yml /usr/local/share/newrelic/newrelic.yml
+
+COPY sumo-sources.json /data/sumo-sources.json
+
+COPY sumo.conf /etc/sumo.conf
+
+CMD /bin/bash /usr/local/share/sumocollector/collector start && java @ENV_JAVA_PARAMS@ -Ddw.authDomain="$AUTH_DOMAIN" -Ddw.databases[0].password="$OLTP_PW" -Ddw.databases[1].password="$DW_PW" -jar -Ddw.databases[0].url="$OLTP_URL" -Ddw.databases[1].url="$DW_URL" -Ddw.fileServiceDomain="$FILE_SERVICE_DOMAIN" -Ddw.photoURLDomain="$PHOTO_URL_DOMAIN"  /data/member-microservice.jar server /data/member-service.yaml
+
+EXPOSE 8080 8081 2181 9092

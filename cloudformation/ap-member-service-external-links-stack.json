@@ -1,0 +1,83 @@
+{
+  "AWSTemplateFormatVersion":"2010-09-09",
+  "Description":"Cloudformation template for external links DynamoDB tables",
+  "Resources":{
+    "ExternalsLinks":{
+      "Type":"AWS::DynamoDB::Table",
+      "Properties":{
+        "AttributeDefinitions":[
+          {
+            "AttributeName":"userId",
+            "AttributeType":"N"
+          },
+          {
+            "AttributeName" : "key",
+            "AttributeType" : "S"
+          },
+          {
+            "AttributeName" : "synchronizedAt",
+            "AttributeType" : "N"
+          }
+        ],
+        "KeySchema":[
+          {
+            "AttributeName":"userId",
+            "KeyType":"HASH"
+          },
+          {
+            "AttributeName":"key",
+            "KeyType":"RANGE"
+          }
+        ],
+        "GlobalSecondaryIndexes": [ {
+            "IndexName": "synchronizedAt-index",
+            "KeySchema": [
+                { "AttributeName": "synchronizedAt", "KeyType": "HASH" }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": "1",
+                "WriteCapacityUnits": "1"
+            }
+        }],
+        "ProvisionedThroughput":{
+          "ReadCapacityUnits":"1",
+          "WriteCapacityUnits":"1"
+        },
+        "TableName":"Externals.Links"
+      }
+    },
+    "ExternalsLinksData":{
+      "Type":"AWS::DynamoDB::Table",
+      "Properties":{
+        "AttributeDefinitions":[
+          {
+            "AttributeName":"userId",
+            "AttributeType":"N"
+          },
+          {
+            "AttributeName" : "key",
+            "AttributeType" : "S"
+          }
+        ],
+        "KeySchema":[
+          {
+            "AttributeName":"userId",
+            "KeyType":"HASH"
+          },
+          {
+            "AttributeName":"key",
+            "KeyType":"RANGE"
+          }
+        ],
+        "ProvisionedThroughput":{
+          "ReadCapacityUnits":"1",
+          "WriteCapacityUnits":"1"
+        },
+        "TableName":"Externals.LinksData"
+      }
+    }        
+  }
+}
