@@ -33,7 +33,8 @@ docker ps
 
 echo "Logging into docker"
 echo "############################"
-docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWD
+# docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWD
+docker login -u $DOCKER_USER -p $DOCKER_PASSWD
 
 echo "Building docker image $DOCKER_REPO:$TAG"
 docker build -t $DOCKER_REPO:$TAG .
