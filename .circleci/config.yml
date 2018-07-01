@@ -49,6 +49,7 @@ jobs:
       - run: mvn test -f service/pom.xml
 
   deploy_prod:
+    machine: true
     steps:
       - run:
           name: Deploying master
