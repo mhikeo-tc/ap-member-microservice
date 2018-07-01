@@ -46,6 +46,21 @@ jobs:
             echo $CIRCLE_BUILD_NUM
             .deploy/test_deploy_master.sh
 
+  deploy_dev:
+    machine: true
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - tc-build-{{ .Branch }}-{{ checksum "service/pom.xml" }}
+            - tc-build-
+      - run:
+          name: Deploying master
+          command: |
+            echo $CIRCLE_BUILD_NUM
+            .deploy/test_deploy_dev.sh
+
 workflows:
   version: 2
   build-deploy:
@@ -57,4 +72,11 @@ workflows:
           filters:
             branches:
               only: master
-
+      - deploy_dev:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - dev
+                - feature/circleci

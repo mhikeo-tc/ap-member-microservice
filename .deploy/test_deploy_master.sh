@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "THIS IS ME!"
+echo "THIS IS ME on MASTER!"
