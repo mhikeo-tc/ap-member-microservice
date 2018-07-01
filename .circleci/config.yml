@@ -1,19 +1,21 @@
-# Java Maven CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy_prod:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/openjdk:8-jdk
       
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
     working_directory: ~/repo
 
     environment:
@@ -30,9 +32,13 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: sudo apt-get -y -qq install awscli
+      - run:
+          name: Install awscli
+          command: sudo apt-get -y -qq install awscli
 
-      - run: mvn clean compile package -f service/pom.xml
+      - run:
+          name: Building package
+          command: mvn clean compile package -f service/pom.xml
 
       - save_cache:
           paths:
@@ -42,4 +48,9 @@ jobs:
       # run tests!
       - run: mvn test -f service/pom.xml
 
+  deploy_prod:
+    steps:
+      - run:
+          name: Deploying master
+          command: echo "This is a testing to deploy master branch."
 
