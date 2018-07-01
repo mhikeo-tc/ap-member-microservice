@@ -10,6 +10,11 @@ restore_cache_settings: &restore_cache_settings
     - tc-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ checksum "service/pom.xml" }}
     - tc-{{ .Environment.CIRCLE_JOB }}-
 
+restore_cache_settings_for_build: &restore_cache_settings_for_build
+  keys:
+    - tc-build-{{ .Branch }}-{{ checksum "service/pom.xml" }}
+    - tc-build-
+
 save_cache_settings: &save_cache_settings
   key: tc-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ checksum "service/pom.xml" }}
   paths:
@@ -36,12 +41,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - tc-build-{{ .Branch }}-{{ checksum "service/pom.xml" }}
-            - tc-build-
+      - restore_cache: *restore_cache_settings_for_build
       - run:
-          name: Deploying master
+          name: Deploying MASTER
           command: |
             echo $CIRCLE_BUILD_NUM
             .deploy/test_deploy_master.sh
@@ -51,12 +53,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - tc-build-{{ .Branch }}-{{ checksum "service/pom.xml" }}
-            - tc-build-
+      - restore_cache: *restore_cache_settings_for_build
       - run:
-          name: Deploying master
+          name: Deploying DEV
           command: |
             echo $CIRCLE_BUILD_NUM
             .deploy/test_deploy_dev.sh
