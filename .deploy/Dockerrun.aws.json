@@ -5,7 +5,7 @@
     "Key": "services/common/dockercfg"
   },
   "Image": {
-    "Name": "appiriodevops/%IMAGE%",
+    "Name": "mhikeotc/%IMAGE%",
     "Update": "true"
   },
   "Ports": [

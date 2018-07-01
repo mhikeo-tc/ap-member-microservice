@@ -13,7 +13,7 @@ if [ "$ENV" = "PROD" ]; then
   ENV_JAVA_PARAMS='-Xmx3g -Dnewrelic.environment=production -javaagent:$NEWRELIC_JAR'
 fi
 
-DOCKER_REPO=appiriodevops/ap-member-microservice
+DOCKER_REPO=mhikeotc/ap-member-microservice
 
 cd $DEPLOY_DIR/docker
 

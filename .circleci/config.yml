@@ -1,8 +1,9 @@
+####################
+# Templates
+####################
 common_settings: &common_settings
   docker:
     - image: circleci/openjdk:8-jdk
-      environment:
-        MAVEN_OPTS: -Xmx3200m
   working_directory: ~/repo
 
 restore_cache_settings: &restore_cache_settings
@@ -21,6 +22,14 @@ save_cache_settings: &save_cache_settings
     - ~/.m2
     - ~/repo/service/target/member-microservice*.jar
 
+install_aws: &install_aws
+  name: Install awscli
+  command: sudo apt-get -y -qq install awscli
+
+
+####################
+# Jobs
+####################
 version: 2
 jobs:
   build:
@@ -28,9 +37,6 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache_settings
-      - run:
-          name: Install awscli
-          command: sudo apt-get -y -qq install awscli
       - run:
           name: Building Package
           command: mvn clean compile package -f service/pom.xml
@@ -42,11 +48,12 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache_settings_for_build
+      - run: *install_aws
       - run:
           name: Deploying MASTER
           command: |
             echo $CIRCLE_BUILD_NUM
-            .deploy/test_deploy_master.sh
+            .deploy/dockerhub_push.sh PROD $CIRCLE_BUILD_NUM
 
   deploy_dev:
     machine: true
@@ -54,12 +61,17 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache_settings_for_build
+      - run: *install_aws
       - run:
           name: Deploying DEV
           command: |
             echo $CIRCLE_BUILD_NUM
-            .deploy/test_deploy_dev.sh
+            .deploy/dockerhub_push.sh DEV $CIRCLE_BUILD_NUM
 
+
+####################
+# Workflows
+####################
 workflows:
   version: 2
   build-deploy:
