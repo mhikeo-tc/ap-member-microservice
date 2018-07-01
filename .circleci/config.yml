@@ -1,3 +1,51 @@
+common_settings: &common_settings
+  docker:
+    - image: circleci/openjdk:8-jdk
+      environment:
+        MAVEN_OPTS: -Xmx3200m
+  working_directory: ~/repo
+
+restore_cache_settings: &restore_cache_settings
+  keys:
+    - tc-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ checksum "service/pom.xml" }}
+    - tc-{{ .Environment.CIRCLE_JOB }}-
+
+save_cache_settings: &save_cache_settings
+  key: tc-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ checksum "service/pom.xml" }}
+  paths:
+    - ~/.m2
+    - ~/repo/service/target
+
+version: 2
+jobs:
+  build:
+    <<: *common_settings
+    steps:
+      - checkout
+      - restore_cache: *restore_cache_settings
+      - run:
+          name: Install awscli
+          command: sudo apt-get -y -qq install awscli
+      - run:
+          name: Building package
+          command: mvn clean compile package -f service/pom.xml
+      - save_cache: *save_cache_settings
+
+  deploy_prod:
+    machine: true
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - tc-build-{{ .Branch }}-{{ checksum "service/pom.xml" }}
+            - tc-build-
+      - run:
+          name: Deploying master
+          command: |
+            echo $CIRCLE_BUILD_NUM
+            .deploy/test_deploy_master.sh
+
 workflows:
   version: 2
   build-deploy:
@@ -9,51 +57,4 @@ workflows:
           filters:
             branches:
               only: master
-
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/openjdk:8-jdk
-      
-    working_directory: ~/repo
-
-    environment:
-      # Customize the JVM maximum heap limit
-      MAVEN_OPTS: -Xmx3200m
-    
-    steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "service/pom.xml" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          name: Install awscli
-          command: sudo apt-get -y -qq install awscli
-
-      - run:
-          name: Building package
-          command: mvn clean compile package -f service/pom.xml
-
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "service/pom.xml" }}
-        
-      # run tests!
-      - run: mvn test -f service/pom.xml
-
-  deploy_prod:
-    machine: true
-    steps:
-      - run:
-          name: Deploying master
-          command: |
-            echo $CIRCLE_BUILD_NUM
-            .deploy/test_deploy_master.sh
 
