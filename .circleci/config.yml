@@ -14,7 +14,7 @@ save_cache_settings: &save_cache_settings
   key: tc-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ checksum "service/pom.xml" }}
   paths:
     - ~/.m2
-    - ~/repo/service/target
+    - ~/repo/service/target/member-microservice*.jar
 
 version: 2
 jobs:
@@ -27,7 +27,7 @@ jobs:
           name: Install awscli
           command: sudo apt-get -y -qq install awscli
       - run:
-          name: Building package
+          name: Building Package
           command: mvn clean compile package -f service/pom.xml
       - save_cache: *save_cache_settings
 
