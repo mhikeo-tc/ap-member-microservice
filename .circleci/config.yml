@@ -53,5 +53,7 @@ jobs:
     steps:
       - run:
           name: Deploying master
-          command: echo "This is a testing to deploy master branch."
+          command: |
+            echo $CIRCLE_BUILD_NUM
+            .deploy/test_deploy_master.sh
 
