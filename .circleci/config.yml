@@ -53,7 +53,8 @@ jobs:
           name: Deploying MASTER
           command: |
             echo $CIRCLE_BUILD_NUM
-            .deploy/dockerhub_push.sh PROD $CIRCLE_BUILD_NUM
+            .deploy/test_deploy_master.sh
+#            .deploy/dockerhub_push.sh PROD $CIRCLE_BUILD_NUM
 
   deploy_dev:
     machine: true
