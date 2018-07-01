@@ -28,6 +28,9 @@ echo "Copying deployment files to docker folder"
 cp $WORKSPACE/service/target/member-microservice*.jar member-microservice.jar
 cp $WORKSPACE/service/src/main/resources/member-service.yaml member-service.yaml
 
+echo "$DOCKER_EMAIL"
+docker ps
+
 echo "Logging into docker"
 echo "############################"
 docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWD
