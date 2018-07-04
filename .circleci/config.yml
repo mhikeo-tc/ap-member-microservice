@@ -67,7 +67,8 @@ jobs:
           name: Deploying DEV
           command: |
             echo $CIRCLE_BUILD_NUM
-            .deploy/dockerhub_push.sh DEV $CIRCLE_BUILD_NUM
+            .deploy/test_deploy_dev.sh
+#            .deploy/dockerhub_push.sh DEV $CIRCLE_BUILD_NUM
 
 
 ####################
@@ -92,3 +93,4 @@ workflows:
               only:
                 - dev
                 - feature/circleci
+                - dev2
